@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rashtraveer Sangha | Discipline, Service & Cultural Heritage</title>
+  <meta name="description" content="Rashtraveer Sangha is an organization dedicated to cultural heritage, physical discipline, youth development, and selfless service to society (राष्ट्रसेवा)." />
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Rashtraveer Sangha" />
+  <meta property="og:description" content="A community rooted in discipline, service, cultural values, and the spirit of राष्ट्रसेवा." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/og-placeholder.jpg" />
+
+  <!-- Google Fonts: Rozha One (Headings) & Mukta (Body/UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header id="main-header" class="site-header">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="Rashtraveer Sangha Home">
+        <span class="brand-rashtraveer" data-i18n="brandRashtraveer">Rashtraveer</span>
+        <span class="brand-sangha" data-i18n="brandSangha">Sangha</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav id="desktop-nav" class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link" data-i18n="navAbout">About</a></li>
+          <li><a href="#leadership" class="nav-link" data-i18n="navLeadership">Leadership</a></li>
+          <li><a href="#programs" class="nav-link" data-i18n="navPrograms">Programs</a></li>
+          <li><a href="#gallery" class="nav-link" data-i18n="navGallery">Gallery</a></li>
+          <li><a href="#events" class="nav-link" data-i18n="navEvents">Events</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="navContact">Contact</a></li>
+        </ul>
+
+        <!-- Language Toggle -->
+        <button type="button" id="lang-toggle-btn" class="lang-toggle-btn" onclick="toggleLanguage()" aria-label="Toggle Language English / Marathi">
+          <span class="lang-icon">🌐</span> <span id="lang-toggle-label">मराठी</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button type="button" id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle Light/Dark Theme">
+          <span id="theme-toggle-icon">🌙</span> <span id="theme-toggle-label">Dark</span>
+        </button>
+
+        <button type="button" class="btn btn-nav-cta" onclick="openDonateModal()" data-i18n="navSupport">Support Us</button>
+      </nav>
+
+      <!-- Mobile Menu Trigger -->
+      <button type="button" id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+        <span class="menu-icon-box">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </span>
+        <span class="menu-text">Menu</span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav-panel" class="mobile-nav-panel" aria-hidden="true">
+      <div class="mobile-nav-header">
+        <span class="brand-logo">
+          <span class="brand-rashtraveer" data-i18n="brandRashtraveer">Rashtraveer</span>
+          <span class="brand-sangha" data-i18n="brandSangha">Sangha</span>
+        </span>
+        <button type="button" id="close-mobile-nav" class="close-mobile-btn" aria-label="Close Navigation Menu">&times;</button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="#about" class="mobile-nav-link" data-i18n="navAbout">About</a></li>
+        <li><a href="#leadership" class="mobile-nav-link" data-i18n="navLeadership">Leadership</a></li>
+        <li><a href="#programs" class="mobile-nav-link" data-i18n="navPrograms">Programs</a></li>
+        <li><a href="#gallery" class="mobile-nav-link" data-i18n="navGallery">Gallery</a></li>
+        <li><a href="#events" class="mobile-nav-link" data-i18n="navEvents">Events</a></li>
+        <li><a href="#contact" class="mobile-nav-link" data-i18n="navContact">Contact</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <button type="button" class="lang-toggle-btn w-full" onclick="toggleLanguage()" style="justify-content: center; margin-bottom: 0.75rem;">
+          <span class="lang-icon">🌐</span> <span id="mobile-lang-label">मराठी</span>
+        </button>
+        <button type="button" class="theme-toggle-btn w-full" onclick="toggleTheme()" style="justify-content: center; margin-bottom: 1rem;">
+          <span id="mobile-theme-icon">🌙</span> <span id="mobile-theme-label">Dark Mode</span>
+        </button>
+        <button type="button" class="btn btn-bhagwa w-full" onclick="closeMobileNav(); openDonateModal();" data-i18n="navSupport">Support Us</button>
+      </div>
+    </div>
+    <div id="mobile-nav-overlay" class="mobile-nav-overlay"></div>
+  </header>
+
+  <main id="main-content">
+    <!-- ================= HERO SECTION ================= -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content container">
+        <div class="devanagari-wrapper">
+          <span class="devanagari-title" lang="mr" data-i18n="devanagariTitle">राष्ट्रवीर संघ</span>
+        </div>
+        <h1 class="hero-title" data-i18n="heroTitle">Rashtraveer Sangha</h1>
+        <p class="hero-tagline" data-i18n="heroTagline">
+          A community rooted in discipline, service, cultural values and the spirit of <span class="highlight-sanskrit">राष्ट्रसेवा</span>.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#about" class="btn btn-bhagwa" data-i18n="heroExploreCta">Explore Our Work</a>
+          <a href="#contact" class="btn btn-outline-light" data-i18n="heroGetInvolvedCta">Get Involved</a>
+        </div>
+      </div>
+
+      <!-- Hero Landscape SVG Visual -->
+      <div class="hero-landscape-wrapper" aria-hidden="true">
+        <svg class="hero-landscape-svg" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Rising Sun -->
+          <circle class="saffron-sun" cx="720" cy="180" r="75" fill="#E8871E" opacity="0.9" />
+          <circle class="sun-glow" cx="720" cy="180" r="110" fill="#E8871E" opacity="0.25" />
+          
+          <!-- Back Terrain Silhouette -->
+          <path d="M0,240 Q280,140 580,210 T1180,160 Q1340,190 1440,220 L1440,320 L0,320 Z" fill="#142820" opacity="0.6" />
+          
+          <!-- Mid Fort & Hill Silhouette -->
+          <path d="M0,260 Q180,200 420,240 T920,200 Q1200,230 1440,250 L1440,320 L0,320 Z" fill="#183227" opacity="0.85" />
+          <path d="M480,235 L490,215 L505,215 L505,225 L525,225 L525,215 L540,215 L545,235 Z" fill="#183227" opacity="0.85" />
+          
+          <!-- Foreground Silhouette -->
+          <path d="M0,285 Q360,250 720,280 T1440,270 L1440,320 L0,320 Z" fill="#1E3B2F" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-label-group">
+          <span class="section-tag" data-i18n="aboutSectionTag">Our Identity</span>
+          <h2 class="section-title" data-i18n="aboutSectionTitle">About Rashtraveer Sangha</h2>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Column: Story & Philosophy -->
+          <div class="about-story">
+            <h3 class="story-subheading" data-i18n="storySubheading">Preserving Values, Empowering Society</h3>
+            <p class="paragraph" data-i18n="storyPara1">
+              <strong>Rashtraveer Sangha</strong> is a dedicated cultural and socio-educational initiative committed to building character, fostering physical discipline, and instilling patriotic duty among youth.
+            </p>
+            <p class="paragraph" data-i18n="storyPara2">
+              Founded on the timeless principles of Indian cultural heritage, the Sangha conducts regular training camps, physical drills, educational study circles, and community welfare projects. We believe that true progress is achieved when individual discipline aligns with collective national service.
+            </p>
+            <div class="about-callout">
+              <span class="callout-icon" aria-hidden="true">🚩</span>
+              <p class="callout-text" data-i18n="aboutCalloutText">
+                “Strength is life, weakness is death. We strive to cultivate courage, wisdom, and selfless devotion to the motherland.”
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: Ruled List of Principles -->
+          <div class="about-principles">
+            <h3 class="principles-heading" data-i18n="principlesHeading">Core Pillars</h3>
+            <ol class="ruled-list">
+              <li class="ruled-item">
+                <span class="principle-number">01</span>
+                <div class="principle-content">
+                  <h4 class="principle-title" data-i18n="principle1Title">Sanskriti <span class="principle-sub">(संस्कृती)</span></h4>
+                  <p class="principle-desc" data-i18n="principle1Desc">Deep engagement with Indian cultural knowledge, historical consciousness, and moral ethics.</p>
+                </div>
+              </li>
+              <li class="ruled-item">
+                <span class="principle-number">02</span>
+                <div class="principle-content">
+                  <h4 class="principle-title" data-i18n="principle2Title">Shakti <span class="principle-sub">(शक्ती)</span></h4>
+                  <p class="principle-desc" data-i18n="principle2Desc">Physical strength, stamina, courage, and traditional martial discipline for self-reliance.</p>
+                </div>
+              </li>
+              <li class="ruled-item">
+                <span class="principle-number">03</span>
+                <div class="principle-content">
+                  <h4 class="principle-title" data-i18n="principle3Title">Sadhana <span class="principle-sub">(साधना)</span></h4>
+                  <p class="principle-desc" data-i18n="principle3Desc">Personal mental discipline, focus, integrity, and continuous inner self-improvement.</p>
+                </div>
+              </li>
+              <li class="ruled-item">
+                <span class="principle-number">04</span>
+                <div class="principle-content">
+                  <h4 class="principle-title" data-i18n="principle4Title">Seva <span class="principle-sub">(सेवा)</span></h4>
+                  <p class="principle-desc" data-i18n="principle4Desc">Unconditional community service, social relief efforts, and active citizen responsibility.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LEADERSHIP SECTION ================= -->
+    <section id="leadership" class="section leadership-section">
+      <div class="container">
+        <div class="section-label-group">
+          <span class="section-tag" data-i18n="leadershipSectionTag">Guiding Vision</span>
+          <h2 class="section-title" data-i18n="leadershipSectionTitle">Leadership & Guidance</h2>
+        </div>
+
+        <div class="leadership-grid">
+          <!-- Arched Portrait Container -->
+          <div class="portrait-column">
+            <div class="arched-portrait-frame">
+              <svg class="portrait-svg-placeholder" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="500" fill="#7A6F62" opacity="0.15" />
+                <path d="M200,140 C235,140 260,165 260,200 C260,235 235,260 200,260 C165,260 140,235 140,200 C140,165 165,140 200,140 Z" fill="#7A6F62" opacity="0.4" />
+                <path d="M100,420 Q200,310 300,420 Z" fill="#7A6F62" opacity="0.4" />
+                <text x="50%" y="460" text-anchor="middle" fill="#56605A" font-family="Mukta" font-size="14" data-i18n="portraitPlaceholderText">[Replace with official Leadership Photograph]</text>
+              </svg>
+              <div class="portrait-badge" data-i18n="portraitBadgeText">Rashtraveer Vision</div>
+            </div>
+          </div>
+
+          <!-- Leader Bio & Quote -->
+          <div class="leadership-info">
+            <span class="leader-role" data-i18n="leaderRole">Guiding Mentor & Visionary</span>
+            <h3 class="leader-name" data-i18n="leaderName">[Founder / Leadership Name]</h3>
+            
+            <p class="paragraph" data-i18n="leaderBio1">
+              Under the inspirational guidance of our senior mentors, Rashtraveer Sangha operates as a non-commercial, volunteer-driven movement. The leadership prioritizes character-building from an early age, advocating a balance of traditional wisdom and modern civic responsibility.
+            </p>
+            <p class="paragraph" data-i18n="leaderBio2">
+              Through decades of dedicated social work, camp organization, and cultural education, our mentors continue to guide hundreds of young volunteers across regions.
+            </p>
+
+            <blockquote class="leadership-quote">
+              <p class="quote-text" data-i18n="quoteText">
+                “Character building and selfless service form the bedrock of a strong, self-reliant nation.”
+              </p>
+              <cite class="quote-author" data-i18n="quoteAuthor">— Leadership Statement, Rashtraveer Sangha</cite>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROGRAMS SECTION ================= -->
+    <section id="programs" class="section programs-section">
+      <div class="container">
+        <div class="section-label-group">
+          <span class="section-tag" data-i18n="programsSectionTag">Initiatives</span>
+          <h2 class="section-title" data-i18n="programsSectionTitle">Programs & Activities</h2>
+        </div>
+
+        <div class="programs-grid">
+          <!-- Program 1 -->
+          <article class="program-item">
+            <div class="program-meta">
+              <span class="badge-kumkum" data-i18n="badgeYouthAdults">Youth & Adults</span>
+            </div>
+            <h3 class="program-title" data-i18n="prog1Title">Physical & Martial Training</h3>
+            <p class="program-desc" data-i18n="prog1Desc">
+              Structured daily and weekend physical fitness routines, yoga, traditional Indian athletics, and self-defense drills designed to build endurance and fortitude.
+            </p>
+          </article>
+
+          <!-- Program 2 -->
+          <article class="program-item">
+            <div class="program-meta">
+              <span class="badge-kumkum" data-i18n="badgeAllAges">All Ages</span>
+            </div>
+            <h3 class="program-title" data-i18n="prog2Title">Cultural & Sanskriti Shibir</h3>
+            <p class="program-desc" data-i18n="prog2Desc">
+              Interactive sessions focusing on ancient history, regional heritage, Devanagari literature, and discussion on ethical values in daily life.
+            </p>
+          </article>
+
+          <!-- Program 3 -->
+          <article class="program-item">
+            <div class="program-meta">
+              <span class="badge-kumkum" data-i18n="badgeYouthAge">Ages 12–25</span>
+            </div>
+            <h3 class="program-title" data-i18n="prog3Title">Youth Empowerment Camps</h3>
+            <p class="program-desc" data-i18n="prog3Desc">
+              Residential youth camps promoting team building, wilderness survival, leadership roles, and group problem-solving under disciplined mentorship.
+            </p>
+          </article>
+
+          <!-- Program 4 -->
+          <article class="program-item">
+            <div class="program-meta">
+              <span class="badge-kumkum" data-i18n="badgeVolunteers">Volunteers</span>
+            </div>
+            <h3 class="program-title" data-i18n="prog4Title">Community Seva Projects</h3>
+            <p class="program-desc" data-i18n="prog4Desc">
+              Active humanitarian drives including blood donation camps, environmental clean-ups, disaster relief assistance, and distribution of essential supplies.
+            </p>
+          </article>
+
+          <!-- Program 5 -->
+          <article class="program-item">
+            <div class="program-meta">
+              <span class="badge-kumkum" data-i18n="badgeOpenEntry">Open Entry</span>
+            </div>
+            <h3 class="program-title" data-i18n="prog5Title">Workshops & Seminars</h3>
+            <p class="program-desc" data-i18n="prog5Desc">
+              Regular public lectures by domain experts on health, physical wellness, civic awareness, historic preservation, and character formation.
+            </p>
+          </article>
+
+          <!-- Program 6 -->
+          <article class="program-item">
+            <div class="program-meta">
+              <span class="badge-kumkum" data-i18n="badgeStudents">Students</span>
+            </div>
+            <h3 class="program-title" data-i18n="prog6Title">Educational Initiatives</h3>
+            <p class="program-desc" data-i18n="prog6Desc">
+              Study circles, academic guidance, value-based supplementary education, and mentorship support for deserving students.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALLERY SECTION ================= -->
+    <section id="gallery" class="section gallery-section">
+      <div class="container">
+        <div class="section-label-group">
+          <span class="section-tag" data-i18n="gallerySectionTag">Moments & Memories</span>
+          <h2 class="section-title" data-i18n="gallerySectionTitle">Gallery</h2>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="gallery-filter-bar" role="tablist" aria-label="Gallery Categories">
+          <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true" data-i18n="filterAll">All</button>
+          <button type="button" class="filter-btn" data-filter="sangha-life" role="tab" aria-selected="false" data-i18n="filterSanghaLife">Sangha Life</button>
+          <button type="button" class="filter-btn" data-filter="training" role="tab" aria-selected="false" data-i18n="filterTraining">Training</button>
+          <button type="button" class="filter-btn" data-filter="events" role="tab" aria-selected="false" data-i18n="filterEvents">Events</button>
+          <button type="button" class="filter-btn" data-filter="service" role="tab" aria-selected="false" data-i18n="filterService">Service</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Tile 1 -->
+          <div class="gallery-tile" data-category="training" tabindex="0" role="button" aria-label="View image: Morning Fitness & Drill Session">
+            <div class="tile-image-box">
+              <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#1E3B2F" opacity="0.9" />
+                <circle cx="200" cy="120" r="50" fill="#E8871E" opacity="0.8" />
+                <path d="M50,260 Q200,180 350,260 Z" fill="#7A6F62" opacity="0.5" />
+                <text x="50%" y="280" text-anchor="middle" fill="#EEF1E7" font-family="Mukta" font-size="14" data-i18n="g1Title">Morning Fitness & Drill Session</text>
+              </svg>
+            </div>
+            <div class="tile-caption">
+              <span class="tile-category" data-i18n="g1Category">Training</span>
+              <h4 class="tile-title" data-i18n="g1Title">Morning Fitness & Drill Session</h4>
+            </div>
+          </div>
+
+          <!-- Tile 2 -->
+          <div class="gallery-tile" data-category="sangha-life" tabindex="0" role="button" aria-label="View image: Daily Prarthana & Assembly">
+            <div class="tile-image-box">
+              <svg class="placeholder-svg" viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="360" fill="#7A6F62" opacity="0.85" />
+                <polygon points="200,60 250,180 150,180" fill="#E8871E" opacity="0.8" />
+                <rect x="80" y="220" width="240" height="100" fill="#1E3B2F" opacity="0.6" />
+                <text x="50%" y="340" text-anchor="middle" fill="#EEF1E7" font-family="Mukta" font-size="14" data-i18n="g2Title">Daily Prarthana & Gathering</text>
+              </svg>
+            </div>
+            <div class="tile-caption">
+              <span class="tile-category" data-i18n="g2Category">Sangha Life</span>
+              <h4 class="tile-title" data-i18n="g2Title">Daily Prarthana & Gathering</h4>
+            </div>
+          </div>
+
+          <!-- Tile 3 -->
+          <div class="gallery-tile" data-category="events" tabindex="0" role="button" aria-label="View image: Annual Sanskriti Sammelan">
+            <div class="tile-image-box">
+              <svg class="placeholder-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="280" fill="#A3261C" opacity="0.8" />
+                <circle cx="200" cy="140" r="70" fill="#E8871E" opacity="0.7" />
+                <text x="50%" y="260" text-anchor="middle" fill="#EEF1E7" font-family="Mukta" font-size="14" data-i18n="g3Title">Annual Cultural Gathering</text>
+              </svg>
+            </div>
+            <div class="tile-caption">
+              <span class="tile-category" data-i18n="g3Category">Events</span>
+              <h4 class="tile-title" data-i18n="g3Title">Annual Cultural Gathering</h4>
+            </div>
+          </div>
+
+          <!-- Tile 4 -->
+          <div class="gallery-tile" data-category="service" tabindex="0" role="button" aria-label="View image: Blood Donation & Health Drive">
+            <div class="tile-image-box">
+              <svg class="placeholder-svg" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="320" fill="#1E3B2F" opacity="0.9" />
+                <path d="M200,80 L230,140 L290,140 L240,180 L260,240 L200,200 L140,240 L160,180 L110,140 L170,140 Z" fill="#E8871E" opacity="0.7" />
+                <text x="50%" y="300" text-anchor="middle" fill="#EEF1E7" font-family="Mukta" font-size="14" data-i18n="g4Title">Community Seva Drive</text>
+              </svg>
+            </div>
+            <div class="tile-caption">
+              <span class="tile-category" data-i18n="g4Category">Service</span>
+              <h4 class="tile-title" data-i18n="g4Title">Community Seva Drive</h4>
+            </div>
+          </div>
+
+          <!-- Tile 5 -->
+          <div class="gallery-tile" data-category="training" tabindex="0" role="button" aria-label="View image: Youth Shibir Discipline Exercises">
+            <div class="tile-image-box">
+              <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#7A6F62" opacity="0.75" />
+                <rect x="60" y="60" width="280" height="180" fill="#1E3B2F" opacity="0.8" />
+                <text x="50%" y="280" text-anchor="middle" fill="#EEF1E7" font-family="Mukta" font-size="14" data-i18n="g5Title">Youth Discipline Camp</text>
+              </svg>
+            </div>
+            <div class="tile-caption">
+              <span class="tile-category" data-i18n="g5Category">Training</span>
+              <h4 class="tile-title" data-i18n="g5Title">Youth Discipline Camp</h4>
+            </div>
+          </div>
+
+          <!-- Tile 6 -->
+          <div class="gallery-tile" data-category="events" tabindex="0" role="button" aria-label="View image: Independence Day Parade Showcase">
+            <div class="tile-image-box">
+              <svg class="placeholder-svg" viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="350" fill="#1E3B2F" opacity="0.95" />
+                <circle cx="200" cy="150" r="80" fill="#E8871E" opacity="0.85" />
+                <text x="50%" y="330" text-anchor="middle" fill="#EEF1E7" font-family="Mukta" font-size="14" data-i18n="g6Title">Rashtra Seva Showcase</text>
+              </svg>
+            </div>
+            <div class="tile-caption">
+              <span class="tile-category" data-i18n="g6Category">Events</span>
+              <h4 class="tile-title" data-i18n="g6Title">Rashtra Seva Showcase</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="gallery-lightbox" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Image Lightbox View">
+      <div class="lightbox-overlay" id="lightbox-overlay"></div>
+      <div class="lightbox-content">
+        <button type="button" class="close-lightbox" id="close-lightbox" aria-label="Close Lightbox">&times;</button>
+        <div class="lightbox-media-container" id="lightbox-media"></div>
+        <div class="lightbox-caption-box">
+          <span id="lightbox-category-tag" class="badge-kumkum">Category</span>
+          <h3 id="lightbox-title" class="lightbox-title">Image Title</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= EVENTS SECTION ================= -->
+    <section id="events" class="section events-section">
+      <div class="container">
+        <div class="section-label-group">
+          <span class="section-tag" data-i18n="eventsSectionTag">Schedule</span>
+          <h2 class="section-title" data-i18n="eventsSectionTitle">Upcoming Events</h2>
+        </div>
+
+        <div class="events-list">
+          <!-- Event 1 -->
+          <article class="event-item">
+            <div class="event-date-block">
+              <span class="event-day">15</span>
+              <span class="event-month" data-i18n="monthOct">OCT</span>
+              <span class="event-year">2026</span>
+            </div>
+            <div class="event-details">
+              <h3 class="event-title" data-i18n="e1Title">Annual Youth Shibir 2026</h3>
+              <p class="event-desc" data-i18n="e1Desc">
+                A 3-day residential youth camp focusing on physical endurance drills, obstacle navigation, and leadership workshops.
+              </p>
+              <div class="event-meta-info">
+                <span class="meta-item" data-i18n="e1Loc">📍 Sangha Central Grounds, Pune</span>
+                <span class="meta-item" data-i18n="e1Time">🕒 06:00 AM onwards</span>
+              </div>
+            </div>
+            <div class="event-action">
+              <button type="button" class="btn btn-outline-dark register-event-btn" data-event-title="Annual Youth Shibir 2026" data-i18n="btnRegisterEvent">Register / Enquire</button>
+            </div>
+          </article>
+
+          <!-- Event 2 -->
+          <article class="event-item">
+            <div class="event-date-block">
+              <span class="event-day">08</span>
+              <span class="event-month" data-i18n="monthNov">NOV</span>
+              <span class="event-year">2026</span>
+            </div>
+            <div class="event-details">
+              <h3 class="event-title" data-i18n="e2Title">Cultural Heritage & Sanskriti Sammelan</h3>
+              <p class="event-desc" data-i18n="e2Desc">
+                An interactive seminar featuring guest lectures, historical exhibitions, and traditional music showcases.
+              </p>
+              <div class="event-meta-info">
+                <span class="meta-item" data-i18n="e2Loc">📍 Community Auditorium, Regional Center</span>
+                <span class="meta-item" data-i18n="e2Time">🕒 04:00 PM - 08:00 PM</span>
+              </div>
+            </div>
+            <div class="event-action">
+              <button type="button" class="btn btn-outline-dark register-event-btn" data-event-title="Cultural Heritage & Sanskriti Sammelan" data-i18n="btnRegisterEvent">Register / Enquire</button>
+            </div>
+          </article>
+
+          <!-- Event 3 -->
+          <article class="event-item">
+            <div class="event-date-block">
+              <span class="event-day">05</span>
+              <span class="event-month" data-i18n="monthDec">DEC</span>
+              <span class="event-year">2026</span>
+            </div>
+            <div class="event-details">
+              <h3 class="event-title" data-i18n="e3Title">Winter Seva & Blood Donation Camp</h3>
+              <p class="event-desc" data-i18n="e3Desc">
+                A day-long community welfare campaign offering free health checkups and blood donation facilities.
+              </p>
+              <div class="event-meta-info">
+                <span class="meta-item" data-i18n="e3Loc">📍 City Medical Center Grounds</span>
+                <span class="meta-item" data-i18n="e3Time">🕒 09:00 AM - 04:00 PM</span>
+              </div>
+            </div>
+            <div class="event-action">
+              <button type="button" class="btn btn-outline-dark register-event-btn" data-event-title="Winter Seva & Blood Donation Camp" data-i18n="btnRegisterEvent">Register / Enquire</button>
+            </div>
+          </article>
+
+          <!-- Event 4 -->
+          <article class="event-item">
+            <div class="event-date-block">
+              <span class="event-day">26</span>
+              <span class="event-month" data-i18n="monthJan">JAN</span>
+              <span class="event-year">2027</span>
+            </div>
+            <div class="event-details">
+              <h3 class="event-title" data-i18n="e4Title">Rashtra Seva Utsav & Physical Drill Showcase</h3>
+              <p class="event-desc" data-i18n="e4Desc">
+                Grand public demonstration of martial skills, march past, pyramid formations, and flag salutation.
+              </p>
+              <div class="event-meta-info">
+                <span class="meta-item" data-i18n="e4Loc">📍 District Stadium Complex</span>
+                <span class="meta-item" data-i18n="e4Time">🕒 07:30 AM</span>
+              </div>
+            </div>
+            <div class="event-action">
+              <button type="button" class="btn btn-outline-dark register-event-btn" data-event-title="Rashtra Seva Utsav & Physical Drill Showcase" data-i18n="btnRegisterEvent">Register / Enquire</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-label-group light">
+          <span class="section-tag" data-i18n="contactSectionTag">Connect</span>
+          <h2 class="section-title" data-i18n="contactSectionTitle">Get in Touch</h2>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Info Column -->
+          <div class="contact-info">
+            <h3 class="info-heading" data-i18n="contactHeading">Visit or Connect With Us</h3>
+            <p class="paragraph light-text" data-i18n="contactPara">
+              Have questions regarding training camps, volunteering for Seva projects, or organizing cultural workshops in your city? Reach out to us.
+            </p>
+
+            <ul class="contact-details-list">
+              <li class="detail-item">
+                <span class="detail-icon">📍</span>
+                <div class="detail-text">
+                  <strong data-i18n="labelAddress">Address</strong>
+                  <span data-i18n="valAddress">[Replace with Official Sangha Office Address, City, State, India - PIN]</span>
+                </div>
+              </li>
+              <li class="detail-item">
+                <span class="detail-icon">📞</span>
+                <div class="detail-text">
+                  <strong data-i18n="labelPhone">Phone</strong>
+                  <a href="tel:+910000000000" class="contact-link" data-i18n="valPhone">[Replace with Official Phone Number]</a>
+                </div>
+              </li>
+              <li class="detail-item">
+                <span class="detail-icon">✉️</span>
+                <div class="detail-text">
+                  <strong data-i18n="labelEmail">Email</strong>
+                  <a href="mailto:contact@rashtraveersangha.org" class="contact-link">[contact@rashtraveersangha.org]</a>
+                </div>
+              </li>
+              <li class="detail-item">
+                <span class="detail-icon">💬</span>
+                <div class="detail-text">
+                  <strong data-i18n="labelWhatsapp">WhatsApp Official</strong>
+                  <span data-i18n="valWhatsapp">[Replace with Official WhatsApp Number]</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="social-links-group">
+              <span class="social-label" data-i18n="socialFollow">Follow Our Journey:</span>
+              <div class="social-icons">
+                <a href="#" class="social-btn" aria-label="Twitter / X Profile">X</a>
+                <a href="#" class="social-btn" aria-label="Instagram Profile">Instagram</a>
+                <a href="#" class="social-btn" aria-label="YouTube Channel">YouTube</a>
+                <a href="#" class="social-btn" aria-label="Facebook Page">Facebook</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Contact Form Column -->
+          <div class="contact-form-column">
+            <form id="contact-form" class="contact-form" onsubmit="handleContactSubmit(event)">
+              <h3 class="form-title" data-i18n="formTitle">Send an Enquiry</h3>
+              
+              <div class="form-group">
+                <label for="user-name" data-i18n="labelFullName">Your Full Name *</label>
+                <input type="text" id="user-name" name="name" required placeholder="e.g. Rahul Sharma" data-i18n-ph="phFullName" class="form-control" />
+              </div>
+
+              <div class="form-group">
+                <label for="user-phone" data-i18n="labelPhoneInput">Phone / WhatsApp Number *</label>
+                <input type="tel" id="user-phone" name="phone" required placeholder="e.g. +91 98765 43210" data-i18n-ph="phPhoneInput" class="form-control" />
+              </div>
+
+              <div class="form-group">
+                <label for="enquiry-topic" data-i18n="labelTopicSelect">Enquiry Topic / Event</label>
+                <select id="enquiry-topic" name="topic" class="form-control">
+                  <option value="General Enquiry" data-i18n="optGeneral">General Enquiry</option>
+                  <option value="Annual Youth Shibir 2026" data-i18n="optEvent1">Event: Annual Youth Shibir 2026</option>
+                  <option value="Cultural Heritage & Sanskriti Sammelan" data-i18n="optEvent2">Event: Cultural Heritage & Sanskriti Sammelan</option>
+                  <option value="Winter Seva & Blood Donation Camp" data-i18n="optEvent3">Event: Winter Seva & Blood Donation Camp</option>
+                  <option value="Rashtra Seva Utsav & Physical Drill Showcase" data-i18n="optEvent4">Event: Rashtra Seva Utsav & Physical Drill Showcase</option>
+                  <option value="Youth Training & Drills" data-i18n="optTopicTraining">Youth Physical Training & Drills</option>
+                  <option value="Volunteering & Seva" data-i18n="optTopicSeva">Volunteering & Community Seva</option>
+                  <option value="Support & Contribution" data-i18n="optTopicSupport">Support & Contribution</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="user-message" data-i18n="labelMessage">Your Message *</label>
+                <textarea id="user-message" name="message" rows="4" required placeholder="Write your message or questions here..." data-i18n-ph="phMessage" class="form-control"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-wa-submit w-full">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" class="wa-icon">
+                  <path d="M12.031 2c-5.517 0-9.997 4.48-9.997 9.998 0 1.8.481 3.49 1.314 4.966l-1.348 4.921 5.045-1.324c1.423.778 3.05 1.217 4.779 1.217 5.518 0 9.997-4.48 9.997-9.998 0-5.519-4.479-9.98-9.987-9.98zm0 17.965c-1.571 0-3.047-.428-4.327-1.17l-.31-.182-3.21.841.856-3.125-.203-.323c-.833-1.328-1.272-2.871-1.272-4.47 0-4.41 3.587-7.997 7.997-7.997 4.41 0 7.997 3.587 7.997 7.997 0 4.41-3.587 7.964-7.997 7.964zm4.398-5.992c-.241-.12-1.426-.703-1.647-.783-.221-.08-.382-.12-.543.12-.161.241-.623.783-.764.944-.141.161-.281.181-.523.06-.241-.12-1.018-.375-1.939-1.196-.716-.638-1.201-1.426-1.342-1.667-.141-.241-.015-.372.105-.492.108-.108.241-.281.362-.422.12-.141.161-.241.241-.402.08-.161.04-.301-.02-.422-.06-.12-.543-1.306-.744-1.788-.196-.47-.397-.406-.543-.414l-.463-.008c-.161 0-.422.06-.643.301s-.844.824-.844 2.01c0 1.185.864 2.33 0.985 2.491c.12.161 1.7 2.597 4.12 3.642.576.249 1.026.398 1.377.509.578.183 1.105.157 1.521.095.464-.069 1.426-.583 1.627-1.145.201-.563.201-1.045.141-1.145-.06-.1-.221-.161-.462-.281z"/>
+                </svg>
+                <span data-i18n="btnSendWhatsapp">Send on WhatsApp</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+  <a href="#" id="floating-wa-btn" class="floating-wa-btn" onclick="openWhatsAppDirect(event)" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="#FFF" aria-hidden="true">
+      <path d="M12.031 2c-5.517 0-9.997 4.48-9.997 9.998 0 1.8.481 3.49 1.314 4.966l-1.348 4.921 5.045-1.324c1.423.778 3.05 1.217 4.779 1.217 5.518 0 9.997-4.48 9.997-9.998 0-5.519-4.479-9.98-9.987-9.98zm0 17.965c-1.571 0-3.047-.428-4.327-1.17l-.31-.182-3.21.841.856-3.125-.203-.323c-.833-1.328-1.272-2.871-1.272-4.47 0-4.41 3.587-7.997 7.997-7.997 4.41 0 7.997 3.587 7.997 7.997 0 4.41-3.587 7.964-7.997 7.964zm4.398-5.992c-.241-.12-1.426-.703-1.647-.783-.221-.08-.382-.12-.543.12-.161.241-.623.783-.764.944-.141.161-.281.181-.523.06-.241-.12-1.018-.375-1.939-1.196-.716-.638-1.201-1.426-1.342-1.667-.141-.241-.015-.372.105-.492.108-.108.241-.281.362-.422.12-.141.161-.241.241-.402.08-.161.04-.301-.02-.422-.06-.12-.543-1.306-.744-1.788-.196-.47-.397-.406-.543-.414l-.463-.008c-.161 0-.422.06-.643.301s-.844.824-.844 2.01c0 1.185.864 2.33 0.985 2.491c.12.161 1.7 2.597 4.12 3.642.576.249 1.026.398 1.377.509.578.183 1.105.157 1.521.095.464-.069 1.426-.583 1.627-1.145.201-.563.201-1.045.141-1.145-.06-.1-.221-.161-.462-.281z"/>
+    </svg>
+    <span class="wa-text" data-i18n="floatingWaText">WhatsApp us</span>
+  </a>
+
+  <!-- ================= FUTURE DONATE MODAL ================= -->
+  <div id="donate-modal" class="donate-modal" aria-hidden="true" role="dialog" aria-label="Support & Contribution Modal">
+    <div class="donate-overlay" onclick="closeDonateModal()"></div>
+    <div class="donate-card">
+      <button type="button" class="close-donate-btn" onclick="closeDonateModal()" aria-label="Close Modal">&times;</button>
+      <div class="donate-header">
+        <span class="badge-kumkum" data-i18n="donateBadge">Future Contribution</span>
+        <h3 class="donate-title" data-i18n="donateTitle">Support Rashtraveer Sangha</h3>
+        <p class="donate-sub" data-i18n="donateSub">Your generous contributions help expand youth training camps, community Seva initiatives, and cultural preservation.</p>
+      </div>
+
+      <div class="donate-body">
+        <div class="upi-box">
+          <div class="qr-placeholder">
+            <svg viewBox="0 0 150 150" width="140" height="140" fill="#17211C" xmlns="http://www.w3.org/2000/svg">
+              <rect width="150" height="150" fill="#EEF1E7" />
+              <rect x="15" y="15" width="40" height="40" fill="#1E3B2F" />
+              <rect x="25" y="25" width="20" height="20" fill="#EEF1E7" />
+              <rect x="95" y="15" width="40" height="40" fill="#1E3B2F" />
+              <rect x="105" y="25" width="20" height="20" fill="#EEF1E7" />
+              <rect x="15" y="95" width="40" height="40" fill="#1E3B2F" />
+              <rect x="25" y="105" width="20" height="20" fill="#EEF1E7" />
+              <rect x="65" y="65" width="20" height="20" fill="#E8871E" />
+              <rect x="95" y="95" width="25" height="25" fill="#1E3B2F" />
+              <text x="50%" y="142" text-anchor="middle" fill="#56605A" font-size="10" font-family="Mukta" data-i18n="qrPlaceholderText">[UPI QR Placeholder]</text>
+            </svg>
+          </div>
+          <div class="upi-details">
+            <span class="detail-label" data-i18n="upiLabel">UPI ID Placeholder:</span>
+            <code class="upi-code">rashtraveer@officialupi</code>
+            <p class="upi-note" data-i18n="upiNote">Scan with any UPI app (GPay, PhonePe, Paytm, BHIM)</p>
+          </div>
+        </div>
+
+        <div class="bank-details-box">
+          <h4 class="bank-heading" data-i18n="bankHeading">Official Bank Account Details</h4>
+          <ul class="bank-list">
+            <li><strong data-i18n="bankAccNameLabel">Account Name:</strong> <span data-i18n="bankAccNameVal">[Replace with Official Organization Account Name]</span></li>
+            <li><strong data-i18n="bankNameLabel">Bank Name:</strong> <span data-i18n="bankNameVal">[Replace with Bank Name & Branch]</span></li>
+            <li><strong data-i18n="bankAccNoLabel">Account Number:</strong> <span data-i18n="bankAccNoVal">[Replace with Account Number]</span></li>
+            <li><strong data-i18n="bankIfscLabel">IFSC Code:</strong> <span data-i18n="bankIfscVal">[Replace with IFSC Code]</span></li>
+          </ul>
+        </div>
+        
+        <p class="legal-disclaimer" data-i18n="legalDisclaimer">
+          Note: This donation section is prepared for official activation. Tax receipt (80G) details will be listed once officially configured.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="brand-rashtraveer" data-i18n="brandRashtraveer">Rashtraveer</span>
+        <span class="brand-sangha" data-i18n="brandSangha">Sangha</span>
+        <p class="footer-tagline" data-i18n="footerTagline">Rooted in tradition • Disciplined in action • Dedicated to राष्ट्रसेवा</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#leadership" data-i18n="navLeadership">Leadership</a>
+        <a href="#programs" data-i18n="navPrograms">Programs</a>
+        <a href="#gallery" data-i18n="navGallery">Gallery</a>
+        <a href="#events" data-i18n="navEvents">Events</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+        <a href="#" onclick="openDonateModal(); return false;" data-i18n="navSupport">Support</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footerCopy">© 2026 Rashtraveer Sangha. All rights reserved.</p>
+        <p class="footer-domain" data-i18n="footerDomain">[www.rashtraveersangha.org]</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
